@@ -19,5 +19,9 @@ keywords = [
 ]
 
 [dependencies]
-ct2rs = { version = "0.9.17", default-features = false, features = ["dnnl", "tokenizers"] }
+ct2rs = { version = "0.9.17", default-features = false, features = [
+    "dnnl",
+    "tokenizers",
+] }
 thiserror = "2.0.18"
+tokio = { version = "1.49.0", features = ["full"] }
