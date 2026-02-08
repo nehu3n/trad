@@ -1,3 +1,4 @@
+use crate::DownloadProgress;
 use crate::error::TranslationError;
 use crate::model::download_model;
 
@@ -70,7 +71,18 @@ impl Translator {
     }
 
     pub async fn setup(cache_dir: Option<PathBuf>) -> Result<Self, TranslationError> {
-        let model_path = download_model(cache_dir).await?;
+        let model_path = download_model(cache_dir, None).await?;
+        Self::new(&model_path)
+    }
+
+    pub async fn setup_with_progress<F>(
+        cache_dir: Option<PathBuf>,
+        callback: F,
+    ) -> Result<Self, TranslationError>
+    where
+        F: Fn(DownloadProgress) + Send + Sync + 'static,
+    {
+        let model_path = download_model(cache_dir, Some(Arc::new(callback))).await?;
         Self::new(&model_path)
     }
 }
