@@ -1,0 +1,21 @@
+[package]
+name = "trad"
+version = "0.1.0"
+edition = "2024"
+authors = ["Nehuén <github.com/nehu3n>"]
+description = "🌎 Extremely-fast offline Rust translation library for 200+ languages. CPU-optimized and fully local."
+license = "MIT"
+repository = "https://github.com/nehu3n/trad"
+keywords = [
+    "translation",
+    "nllb",
+    "multilingual",
+    "ai",
+    "nlp",
+    "translator",
+    "fast",
+    "cpu",
+    "local",
+]
+
+[dependencies]
