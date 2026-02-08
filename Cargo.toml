@@ -7,17 +7,7 @@ description = "🌎 Extremely-fast offline Rust translation library for 200+ lan
 license = "MIT"
 readme = "readme.md"
 repository = "https://github.com/nehu3n/trad"
-keywords = [
-    "translation",
-    "nllb",
-    "multilingual",
-    "ai",
-    "nlp",
-    "translator",
-    "fast",
-    "cpu",
-    "local",
-]
+keywords = ["translation", "multilingual", "translator", "cpu", "local"]
 
 [dependencies]
 ct2rs = { version = "0.9.17", default-features = false, features = [
