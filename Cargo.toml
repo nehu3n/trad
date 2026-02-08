@@ -5,6 +5,7 @@ edition = "2024"
 authors = ["Nehuén <github.com/nehu3n>"]
 description = "🌎 Extremely-fast offline Rust translation library for 200+ languages. CPU-optimized and fully local."
 license = "MIT"
+readme = "readme.md"
 repository = "https://github.com/nehu3n/trad"
 keywords = [
     "translation",
