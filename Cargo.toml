@@ -23,5 +23,9 @@ ct2rs = { version = "0.9.17", default-features = false, features = [
     "dnnl",
     "tokenizers",
 ] }
+hf-hub = { version = "0.4.3", default-features = false, features = [
+    "tokio",
+    "rustls-tls",
+] }
 thiserror = "2.0.18"
 tokio = { version = "1.49.0", features = ["full"] }

@@ -1,4 +1,5 @@
 use crate::error::TranslationError;
+use crate::model::download_model;
 
 use ct2rs::Translator as CT2Translator;
 use ct2rs::tokenizers::auto::Tokenizer;
@@ -66,5 +67,10 @@ impl Translator {
         })
         .await
         .map_err(|e| TranslationError::TranslationFailed(e.to_string()))?
+    }
+
+    pub async fn setup(cache_dir: Option<PathBuf>) -> Result<Self, TranslationError> {
+        let model_path = download_model(cache_dir).await?;
+        Self::new(&model_path)
     }
 }
